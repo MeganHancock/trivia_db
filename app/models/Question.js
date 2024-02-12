@@ -9,11 +9,13 @@ export class Question {
 
     get QuestionAndAnswersHTMLTemplate() {
         return `
-        <div class="col-12 display-1 m-5">${this.question}</div>
+        <section class="row text-center justify-content-around">
 
-        <div class="col-5 fs-3 card mb-3 me-3" onclick="selectAnswer()">${this.correctAnswer}</div>
+        <div class="col-12 display-4 m-5">${this.question}</div>
+
+        <div class="col-5 fs-3 card mb-3" onclick="selectAnswer()">${this.correctAnswer}</div>
         <div class="col-5 fs-3 card mb-3" onclick="selectAnswer()">${this.incorrectAnswers[0]}</div>
-        <div class="col-5 fs-3 card  me-3" onclick="selectAnswer()">${this.incorrectAnswers[1]}</div>
+        <div class="col-5 fs-3 card" onclick="selectAnswer()">${this.incorrectAnswers[1]}</div>
         <div class="col-5 fs-3 card" onclick="selectAnswer()">${this.incorrectAnswers[2]}</div>
         `
     }

@@ -2,6 +2,7 @@ import { AppState } from "../AppState.js";
 import { Question } from "../models/Question.js";
 import { questionsApi } from "./AxiosService.js";
 
+
 class QuestionsService {
 
     async getQuestions() {
@@ -13,6 +14,11 @@ class QuestionsService {
 
         AppState.questions = newQuestions
     }
+
+    // setActiveQuestion(){
+    //     let activeQuestion = ''
+    //     for(let i = 0; i < AppState.questions.length; i++){
+    //     activeQuestion = AppState.questions[i]}
 
 }
 
