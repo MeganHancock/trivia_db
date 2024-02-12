@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { Question } from "../models/Question.js";
+import { Pop } from "../utils/Pop.js";
 import { questionsApi } from "./AxiosService.js";
 
 
@@ -13,6 +14,18 @@ class QuestionsService {
         console.log('questions not a pojo', newQuestions)
 
         AppState.questions = newQuestions
+    }
+
+    async selectAnswer(question, userAnswer) {
+        try {
+            const activeQuestion = AppState.questions.find(({ question }) => question == AppState.questions)
+            if (question && userAnswer == activeQuestion.question && activeQuestion.correctAnswer) {
+                await Pop.confirm('Correct!')
+            }
+        } catch (error) {
+            await Pop.confirm('Wrong answer!')
+        }
+        AppState.emit('questions')
     }
 
     // setActiveQuestion(){

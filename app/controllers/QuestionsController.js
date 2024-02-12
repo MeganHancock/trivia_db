@@ -4,10 +4,10 @@ import { Pop } from "../utils/Pop.js"
 import { setHTML } from "../utils/Writer.js"
 
 function _drawQuestion() {
-    const questions = AppState.questions
-    let htmlString = ''
-    questions.forEach(question => htmlString += question.QuestionAndAnswersHTMLTemplate)
-    setHTML('questionCard', htmlString)
+    for (let i = 0; i < AppState.questions.length; i++) {
+        const question = AppState.questions[i].QuestionAndAnswersHTMLTemplate
+        setHTML('questionCard', question)
+    }
 }
 
 export class QuestionsController {
@@ -28,8 +28,9 @@ export class QuestionsController {
             console.log(error);
         }
 
-        // setActiveQuestion(){
-        //     questionsService.setActiveQuestion()
-        // }
+    }
+
+    selectAnswer(question, userAnswer) {
+        questionsService.selectAnswer(question, userAnswer)
     }
 }
