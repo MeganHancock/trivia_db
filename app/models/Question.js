@@ -9,12 +9,27 @@ export class Question {
 }
 
 const questionsData = {
-
-    "type": "boolean",
-    "difficulty": "medium",
-    "category": "Science &amp; Nature",
-    "question": "A defibrillator is used to start up a heartbeat once a heart has stopped beating.",
-    "correct_answer": "False",
-    "incorrect_answers": ["True"]
-
+    "type": "multiple",
+    "difficulty": "hard",
+    "category": "Science: Computers",
+    "question": "Which kind of algorithm is Ron Rivest not famous for creating?",
+    "correct_answer": "Secret sharing scheme",
+    "incorrect_answers": [
+        "Hashing algorithm",
+        "Asymmetric encryption",
+        "Stream cipher"
+    ]
 }
+
+
+
+// const questionsData = {
+
+//     "type": "boolean",
+//     "difficulty": "medium",
+//     "category": "Science &amp; Nature",
+//     "question": "A defibrillator is used to start up a heartbeat once a heart has stopped beating.",
+//     "correct_answer": "False",
+//     "incorrect_answers": ["True"]
+
+// }
