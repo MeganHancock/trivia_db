@@ -1,4 +1,4 @@
-export class Questions {
+export class Question {
     constructor(data) {
         this.type = data.type
         this.category = data.category
