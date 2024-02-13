@@ -17,22 +17,37 @@ class QuestionsService {
     }
 
     async selectAnswer(question, userAnswer) {
-        try {
-            const activeQuestion = AppState.questions.find(({ question }) => question == AppState.questions)
-            if (question && userAnswer == activeQuestion.question && activeQuestion.correctAnswer) {
-                await Pop.confirm('Correct!')
-            }
-        } catch (error) {
-            await Pop.confirm('Wrong answer!')
-        }
+        console.log(question, userAnswer)
+        const currentQuestion = AppState.questions.find(activeQuestion => activeQuestion == question)
+        if (currentQuestion.correctAnswer == userAnswer) {
+            window.alert('winner')
+        } else { window.alert('loser') }
+
         AppState.emit('questions')
     }
 
-    // setActiveQuestion(){
-    //     let activeQuestion = ''
-    //     for(let i = 0; i < AppState.questions.length; i++){
-    //     activeQuestion = AppState.questions[i]}
 
+
+    // const activeQuestion = AppState.questions.find(({ question }) => question == AppState.questions)
+    // console.log('active question', activeQuestion)
+
+    // // try {
+    // const activeQuestion = AppState.questions.find(({ question }) => question == AppState.questions)
+    // console.log('active question', activeQuestion)
+    // if (userAnswer == activeQuestion.correctAnswer) {
+    //     await Pop.confirm('Correct!')
+    //     }
+    //     } catch(error) {
+    //     await Pop.confirm('Wrong answer!')
+    // }
+    //     AppState.emit('questions')
 }
+
+// setActiveQuestion(){
+//     let activeQuestion = ''
+//     for(let i = 0; i < AppState.questions.length; i++){
+//     activeQuestion = AppState.questions[i]}
+
+
 
 export const questionsService = new QuestionsService()
